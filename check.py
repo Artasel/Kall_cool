@@ -1,49 +1,23 @@
 
 # def user_mode(rez: str) -> bool:
 #     return rez == '1' or rez == '2' or rez == '3'
+'''проверка пользователя на ввод в меню'''
 
-from queue import Empty
+# def empty_line(rez: str) -> bool:
+#     s = len(rez)
+#     return s == 0
+'''проверка ввода пустой строки'''
 
-rez = input('Enter: ')
-def foo(rez: str) -> bool:
-   return rez == Empty
-
-print(foo(rez))
-
-
-
-
-
-
-
-# def empty_line(rez2):
-
-
-# def is_compl(rez3):
+num = '1.2 4.3'
+num1 = 0
+def is_compl(num):
+    print(num)
+    num1 = num.split(' ')
+    print(num1)
+is_compl(num)
 
 
 
 
-# def is_real_number(inputed):
-#     is_correct = False
-#     while not is_correct:
-#         try:
-#             number = int(input(f'{inputed}'))
-#             is_correct = True
-#         except ValueError:
-#             print('Некорректный ввод')
-#     return number
 
-# def is_complex_number(inputed):
-#     is_correct = False
-#     while not is_correct:
-#         try:
-#             number = int(input(f'{inputed}'))
-#             is_correct = True
-#         except ValueError:
-#             print('Некорректный ввод')
-#     return number
-
-# def is_evel():
-#     eval()
 

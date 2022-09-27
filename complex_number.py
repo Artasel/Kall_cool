@@ -27,7 +27,7 @@ def sub_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  
     '''
     re_z = z_left_side[0] - z_right_side[0] # дейсвительная часть
     im_z = z_left_side[1] - z_right_side[1] # мнимая часть
-    return tuple(re_z, im_z)
+    return tuple([re_z, im_z])
 
 def sum_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  z2 = (x2, y2)
     '''
@@ -42,17 +42,19 @@ def sum_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  
     '''
     re_z = z_left_side[0] + z_right_side[0] # дейсвительная часть
     im_z = z_left_side[1] + z_right_side[1] # мнимая часть
-    return tuple(re_z, im_z)
+    return tuple([re_z, im_z])
 
-def mult_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  z2 = (x2, y2)
+def mult_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   # z1 = (x1, y1),  z2 = (x2, y2)
     '''
     умножение двух комплексных чисел
     Умножение комплексных чисел производится, как умножение многочленов с учётом свойства числа i (i^2 = -1)
     z1 * z2 = (x1*x2 - y1*y2) + (y1*x2 + x1*y2)*i
     '''
-    re_z = z_left_side[0] + z_right_side[0] # (x1*x2 - y1*y2) дейсвительная часть
-    im_z = z_left_side[1] + z_right_side[1] # (y1*x2 + x1*y2) мнимая часть
-    return tuple(re_z, im_z)
+            # (x1         *       x2        -      y1        *     y2) 
+    re_z = z_left_side[0] * z_right_side[0] - z_left_side[1] * z_right_side[1] # дейсвительная часть
+            # (y1         *       x2        +       x1       *     y2)
+    im_z = z_left_side[1] * z_right_side[0] + z_left_side[0] * z_right_side[1] # мнимая часть
+    return tuple([re_z, im_z])
 
 def div_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  z2 = (x2, y2)
     '''
@@ -73,4 +75,4 @@ def div_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  
         mudul_z2_qwadrat = z_right_side[0] ** 2 + z_right_side[1] ** 2  # квадрат модуля делителя
         sopr_z2 = ( z_right_side[0], -z_right_side[1])                  # сопряжённое делителю
         chslitel = mult_compl(z_left_side, sopr_z2)                     # числитель: произведение левого_числа на сопряжённое делителю
-    return tuple(chslitel[0] / mudul_z2_qwadrat, chslitel[1] / mudul_z2_qwadrat) # числитель разделить на квадрат модуля делителя
+    return tuple([chslitel[0] / mudul_z2_qwadrat, chslitel[1] / mudul_z2_qwadrat]) # числитель разделить на квадрат модуля делителя

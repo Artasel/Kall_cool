@@ -65,7 +65,7 @@ def div_compl(z_left_side:tuple, z_right_side:tuple)-> tuple:   #z1 = (x1, y1)  
     '''
     epsilon = 0.0000000001
     if (abs(z_right_side[0] + z_right_side[0]) < epsilon):
-        raise ZeroDivisionError # вызов исключения - деления на ноль
+        return "деление на ноль" # возврат деления на ноль
     elif (-epsilon < z_right_side[1] < +epsilon): # деление на действительное второе число z2 = x2 = x2 + 0*i
         re_z = z_left_side[0]  / z_right_side[0] # ~ x1 / x2
         im_z = z_left_side[1]  / z_right_side[0] # ~ y1 / x2

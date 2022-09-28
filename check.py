@@ -12,7 +12,7 @@ def empty_line(rez: str) -> bool:
 
 def is_compl(num):
     num1, num2 = num.split(' ')
-    return num1.isdigit(), num2.isdigit()
+    return num1.isdigit() and num2.isdigit()
     
 '''проверка и разбитие строки на 2 значения'''
 
@@ -24,6 +24,9 @@ def is_number(s):
         return False
 
 '''проверяет число на float'''
+
+def is_action(x):
+    return x in ["+", "-", "*", "/"]
 
 
 
